@@ -1,3 +1,5 @@
+LICENSE
+README.md
 setup.py
 keep_in_touch/__init__.py
 keep_in_touch/main.py

@@ -5,6 +5,7 @@ from prompt_toolkit.styles import Style
 from prompt_toolkit.shortcuts import print_formatted_text
 from collections import UserDict, UserList
 from datetime import datetime, date
+from pathlib import Path
 import pickle
 import re
 
@@ -205,9 +206,12 @@ class Record:
 
 
 class AddressBook(UserDict):
-    def __init__(self, filename='book.bin'):
+    def __init__(self):
         super().__init__()
-        self.filename = filename
+        self.folder_path = Path('C:/User/Public')
+        self.filename = self.folder_path / 'book.bin'
+        if not self.folder_path.exists():
+            self.folder_path.mkdir(parents=True)
         self.load_from_file()
 
     def add_record(self, value):
@@ -254,6 +258,8 @@ class AddressBook(UserDict):
                 data = dict(sorted((pickle.load(file)).items()))
                 if data:
                     self.data = data
+        except EOFError:
+            pass
         except FileNotFoundError:
             pass
 
@@ -285,9 +291,12 @@ class Note(UserDict):
 
 
 class Notes(UserList):
-    def __init__(self, filename='notes.bin'):
+    def __init__(self):
         super().__init__()
-        self.filename = filename
+        self.folder_path = Path('C:/User/Public')
+        self.filename = self.folder_path / 'notes.bin'
+        if not self.folder_path.exists():
+            self.folder_path.mkdir(parents=True)
         self.load_notes_from_file()
 
     # добавление записи в записную книгу
