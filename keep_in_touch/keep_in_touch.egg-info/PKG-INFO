@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: keep_in_touch
+Version: 0.0.2
+Summary: Project of the development team "AngryRaccoons", project - "Keep In Touch"
+Author: Project_group_14 "AngryRaccoons"
+License: MIT
+Requires-Dist: prompt_toolkit
