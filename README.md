@@ -11,7 +11,7 @@ Contact book and notebook
 
 **Installation**
 
-*To install type "" in your IDE terminal
+*To install type "pip install -i https://test.pypi.org/simple/ keep-in-touch" in your IDE terminal
 
 
 *To start type "keep_in_touch" in your IDE terminal
